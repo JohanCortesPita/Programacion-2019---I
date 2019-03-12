@@ -151,30 +151,48 @@ def comparar_cuadrado(num1,num2):
     else:
         return 'El segundo es menor que el cuadrado del primero'
 
-def n_primo(num):
+def numero_primo(num):
     '''
-    (int) -> str
-
-    Recibe un numero y define si el número ingresado es primo
-
-    >>> n_primo(2)
-    'Es un numero primo'
-
-    >>> n_primo(4)
-    'No es un numero primo'
-    
-    >>> doble_impar('Chao')
+    (int)-> str: si es primo o no
+    >>> numero_primo(2)
+    'es un numero primo'
+    >>> numero_primo(4)
+    'no es un numero primo'
+    >>> numero_primo('s')
     Traceback (most recent call last):
     ..
-    TypeError: Chao no es un numero
-    
-    :param num: Numero a evaludar
-    :return: Define si un numero es primo
+    TypeError: <class 'str'> no es un entero
+    :param num: numero a determinar si es o no primo
+    :return: str: mensaje si el numero es primo o no
     '''
 
-    if int != type(num):
-        raise TypeError('No es un numero')
-    elif num == 0:
-        raise ZeroDivisionError('No dividiras por 0')
-    elif (num%num)==0) == (num%1)
-    
+    if(int != type(num)):
+        raise TypeError(str(type(num))+ ' no es un entero')
+
+    if((num%2==0 and num!=2) or (num%3==0 and num!=3) or (num%5==0 and num!=5) or (num%7==0 and num != 7)):
+        return 'no es un numero primo'
+    else:
+        return 'es un numero primo'
+
+def saludo_segun_hora(hora):
+    '''
+    (num)-> str
+     >>> saludo_segun_hora(19)
+     'Buenas noches'
+     >>> saludo_segun_hora(1)
+     'Buenos dias'
+     >>> saludo_segun_hora(12)
+     'Buenas tardes'
+    :param hora: num: la hora actual
+    :return: str: el saludo segun la hora
+    '''
+    if(int != type(hora)):
+        raise TypeError('ingrese solo numeros enteros')
+
+    if(hora<12):
+        return 'Buenos dias'
+    elif(hora>=12 and hora<18):
+        return 'Buenas tardes'
+    else:
+        return 'Buenas noches'
+
