@@ -162,14 +162,14 @@ def numero_primo(num):
     Traceback (most recent call last):
     ..
     TypeError: <class 'str'> no es un entero
+
     :param num: numero a determinar si es o no primo
     :return: str: mensaje si el numero es primo o no
     '''
 
     if(int != type(num)):
-        raise TypeError(str(type(num))+ ' no es un entero')
-
-    if((num%2==0 and num!=2) or (num%3==0 and num!=3) or (num%5==0 and num!=5) or (num%7==0 and num != 7)):
+        raise TypeError(str(type(num)) + ' no es un entero')
+    elif ((num%2==0 and num!=2) or (num%3==0 and num!=3) or (num%5==0 and num!=5) or (num%7==0 and num != 7)):
         return 'no es un numero primo'
     else:
         return 'es un numero primo'
@@ -183,13 +183,14 @@ def saludo_segun_hora(hora):
      'Buenos dias'
      >>> saludo_segun_hora(12)
      'Buenas tardes'
+
     :param hora: num: la hora actual
     :return: str: el saludo segun la hora
     '''
+
     if(int != type(hora)):
         raise TypeError('ingrese solo numeros enteros')
-
-    if(hora<12):
+    elif(hora<12):
         return 'Buenos dias'
     elif(hora>=12 and hora<18):
         return 'Buenas tardes'
