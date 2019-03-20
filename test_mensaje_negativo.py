@@ -42,6 +42,13 @@ class Testnumero_primo(TestCase):
         self.assertEqual(c.numero_primo(2), 'es un numero primo')
         self.assertEqual(c.numero_primo(4), 'no es un numero primo')
 
+class TestCalcule_cantidad_billetes(TestCase):
+   def test_calcule_cantidad_billetes(self):
+       self.assertEqual(c.calcule_cantidad_billetes(3300), ' Usted requiere 6 billetes de 500, Usted requiere 1 billetes de 200, Usted requiere 1 billetes de 100,')
+       self.assertRaises(TypeError, c.calcule_cantidad_billetes, 'hola no es un numero o otro tipo de caracter')
+       self.assertRaises(TypeError, c.calcule_cantidad_billetes, "6.2 no es un numero o otro tipo de caracter")
+       self.assertRaises(TypeError, c.calcule_cantidad_billetes, "-600 no es un valor para una cantidad monetaria")
+
 
 
 

@@ -174,5 +174,66 @@ def numero_primo(num):
     else:
         return 'es un numero primo'
 
+def calcule_cantidad_billetes(cantidad):
+  """
+  num-> str
+
+  Calcula la cantidad de billetes para una cantidad dada
+
+  >>> calcule_cantidad_billetes(3300)
+  ' Usted requiere 6 billetes de 500, Usted requiere 1 billetes de 200, Usted requiere 1 billetes de 100,'
+
+  >>> calcule_cantidad_billetes('hola')
+  Traceback (most recent call last):
+  ..
+  TypeError: hola no es un numero o otro tipo de caracter
+
+   >>> calcule_cantidad_billetes(6.2)
+   Traceback (most recent call last):
+   ..
+   TypeError: 6.2 no es un numero o otro tipo de caracter
+
+   >>> calcule_cantidad_billetes(-600)
+   Traceback (most recent call last):
+   ..
+   ValueError: -600 no es un valor para una cantidad monetaria
+
+  :param cantidad:
+  :return: mensaje
+  """
+  if int != type(cantidad):
+      raise TypeError(str(cantidad) + ' no es un numero o otro tipo de caracter')
+  else:
+      if (cantidad)<0:
+          raise ValueError(str(cantidad) + ' no es un valor para una cantidad monetaria')
+
+      ent = cantidad // 500
+      sobrante = cantidad % 500
+      if ent:
+          mensaje =(' Usted requiere {0} billetes de 500,'.format(cantidad // 500))
+
+      ent=sobrante//200
+      if ent:
+          mensaje +=(' Usted requiere {0} billetes de 200,'.format(sobrante//200))
+      sobrante= sobrante%200
+      ent=sobrante//100
+      if ent:
+          mensaje +=(' Usted requiere {0} billetes de 100,' .format(sobrante//100))
+      sobrante = sobrante % 100
+      ent = sobrante // 50
+      if ent:
+          mensaje +=(' Usted requiere {0} billetes de 50,'. format(sobrante // 50))
+      sobrante = sobrante % 50
+      ent = sobrante // 20
+      if ent:
+          mensaje +=(' Usted requiere {0} billetes de 20,'. format(sobrante // 20))
+      sobrante = sobrante % 20
+      ent = sobrante // 10
+      if ent:
+          mensaje +=(' Usted requiere {0} billetes de 10,'. format(sobrante // 10))
+
+      sobrante = sobrante % 10
+      return (mensaje)
+
 
 
