@@ -174,26 +174,5 @@ def numero_primo(num):
     else:
         return 'es un numero primo'
 
-def saludo_segun_hora(hora):
-    '''
-    (num)-> str
-     >>> saludo_segun_hora(19)
-     'Buenas noches'
-     >>> saludo_segun_hora(1)
-     'Buenos dias'
-     >>> saludo_segun_hora(12)
-     'Buenas tardes'
 
-    :param hora: num: la hora actual
-    :return: str: el saludo segun la hora
-    '''
-
-    if(int != type(hora)):
-        raise TypeError('ingrese solo numeros enteros')
-    elif(hora<12):
-        return 'Buenos dias'
-    elif(hora>=12 and hora<18):
-        return 'Buenas tardes'
-    else:
-        return 'Buenas noches'
 

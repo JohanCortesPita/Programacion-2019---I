@@ -38,12 +38,11 @@ class Testcomparar_cuadrado(TestCase):
 
 class Testnumero_primo(TestCase):
     def test_numero_primo(self):
-        self.assertEqual(c.numero_primo(13, 'es un numero primo'))
-        self.assertEqual(c.numero_primo(1872))
+        self.assertRaises(TypeError, c.numero_primo, 's')
+        self.assertEqual(c.numero_primo(2), 'es un numero primo')
+        self.assertEqual(c.numero_primo(4), 'no es un numero primo')
 
-        self.assertRaises(TypeError, c.numero_primo, 'ddd')
-        self.assertEqual(c.numero_primo(13), 'es un numero primo')
-        self.assertEqual(c.numero_primo(1872), 'no es un numero primo')
+
 
 
 
